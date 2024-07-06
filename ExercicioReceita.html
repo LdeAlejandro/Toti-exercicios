@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    .main-container {
+      margin-left: 21px;
+      max-width: 883px;
+      height: 2865;
+      background: #ffffff 0% 0% no-repeat padding-box;
+      opacity: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    img {
+      max-width: 883px;
+      max-height: 374px;
+      margin-bottom: 21.5px;
+    }
+
+    .recipe-title {
+      margin: 0 0 10px 0;
+      top: 420px;
+      left: 21px;
+      width: 884px;
+      height: 187px;
+      text-align: left;
+      font: normal normal 900 89px/79px Montserrat;
+      letter-spacing: 0px;
+      color: #ffb300;
+      opacity: 1;
+    }
+
+    .author-text {
+      margin: 0 0 34px 0;
+      width: 884px;
+      height: 28px;
+      text-align: right;
+      font: normal normal bold 21px/34px Montserrat;
+      letter-spacing: 0px;
+      color: #000000;
+      opacity: 1;
+    }
+
+    .about-dish {
+      margin: 0 0 70px 0;
+      width: 883px;
+      height: 197px;
+      text-align: left;
+      font: normal normal 600 21px/34px Montserrat;
+      letter-spacing: 0px;
+      color: #000000;
+      opacity: 1;
+    }
+
+    .preparation-info {
+      border-bottom: 5px solid #999999;
+      border-top: 5px solid #999999;
+    }
+
+    .preparation-info-time {
+      margin: 29px 0 34px 0;
+    }
+
+    .preparation-info-ration {
+      margin: 0 0 29px 0;
+    }
+
+    .preparation-info-bold-text {
+      width: 123px;
+      height: 25px;
+      text-align: left;
+      font: normal normal 900 21px/25px Montserrat;
+      letter-spacing: 0px;
+      color: #000000;
+    }
+
+    .preparation-info-text {
+      width: 135px;
+      height: 25px;
+      text-align: left;
+      font: normal normal 21px/25px Montserrat;
+      letter-spacing: 0px;
+      color: #000000;
+    }
+
+    .ingredients-title {
+      width: 235px;
+      height: 42px;
+      margin: 34px 19px 0 0;
+      /* UI Properties */
+      text-align: left;
+      font: normal normal 900 34px/42px Montserrat;
+      letter-spacing: 0px;
+      color: #ffb300;
+      opacity: 1;
+    }
+
+    .ingredient-list-container {
+      margin-bottom: 23px;
+      width: 753px;
+      height: 366px;
+      text-align: left;
+      font: normal normal 600 21px/34px Montserrat;
+      letter-spacing: 0px;
+      color: #000000;
+      opacity: 1;
+    }
+    .ingredients-container {
+      border-bottom: 5px solid #999999;
+    }
+
+    .preparation-steps-container {
+      margin-top: 1px;
+      border-bottom: 5px solid #999999;
+    }
+
+    .preparation-title {
+      width: 315px;
+      height: 42px;
+      margin-top: 34px;
+      margin-bottom: 35px;
+      /* UI Properties */
+      text-align: left;
+      font: normal normal 900 34px/42px Montserrat;
+      letter-spacing: 0px;
+      color: #ffb300;
+      opacity: 1;
+    }
+
+    .preparation-steps {
+    }
+
+    .preparation-steps {
+      margin-top: 34px;
+      margin-bottom: 30px;
+      max-width: 844px;
+      max-height: 380px;
+      /* UI Properties */
+      text-align: left;
+      font: normal normal 600 21px/34px Montserrat;
+      letter-spacing: 0px;
+      color: #000000;
+      opacity: 1;
+    }
+
+    .recipe-video-title {
+      margin-top: 34.5px;
+      margin-bottom: 35px;
+      width: 311px;
+      height: 42px;
+      text-align: left;
+      font: normal normal 900 34px/42px Montserrat;
+      letter-spacing: 0px;
+      color: #ffb300;
+      opacity: 1;
+    }
+
+    .recipe-video-iframe {
+      width: 883px;
+      height: 497px;
+      /* UI Properties */
+      border: 1px solid #707070;
+      opacity: 1;
+    }
+
+    .go-back-to-top {
+      margin-top: 31px;
+      margin-bottom: 110px;
+      width: 263px;
+      height: 25px;
+      text-align: left;
+      text-decoration: underline;
+      font: normal normal 900 21px/25px Montserrat;
+      letter-spacing: 0px;
+      color: #0037b3;
+      text-transform: uppercase;
+      opacity: 1;
+    }
+  </style>
+
+  <body>
+    <main class="main-container">
+      <img
+        src="https://redesupermarket.com.br/wp-content/uploads/2022/04/sTROGONOFF.png"
+        alt="receita pronta"
+      />
+      <h1 class="recipe-title" id="recipe-title">Strogonoff de Frango</h1>
+      <span class="author-text"> Autora: Fernanda </span>
+      <div class="about-dish">
+        <p>
+          O Strogonoff, apesar de ser uma receita muito famosa entre os
+          brasileiros, nasceu na Rússia e era um prato servidor para nobreza
+          russa.
+        </p>
+        <p>
+          No Brasil, se popularizou nos anos 1970 e era uma comida especial,
+          servida em festas. Não demorou muito, o strogonoff chegou nos pratos
+          de todos brasileiros e hoje faz parte do nosso dia a dia.
+        </p>
+      </div>
+
+      <div class="preparation-info">
+        <div class="preparation-info-time">
+          <span class="preparation-info-bold-text"> PREPARO: </span>
+          <span class="preparation-info-text"> 60 MINUTOS </span>
+        </div>
+
+        <div class="preparation-info-ration">
+          <span class="preparation-info-bold-text"> RENDIMENTO: </span>
+          <span class="preparation-info-text"> 10 PORÇÕES </span>
+        </div>
+      </div>
+
+      <div class="ingredients-container">
+        <h2 class="ingredients-title">Ingredientes</h2>
+
+        <ul class="ingredient-list-container">
+          <li class="ingredients-item">3 peitos de frango cortados em cubo.</li>
+          <li class="ingredients-item">1 dente de alho picado</li>
+          <li class="ingredients-item">Sal e pimenta a gosto</li>
+          <li class="ingredients-item">1 cebola picado</li>
+          <li class="ingredients-item">2 colheres de sopa de maionese</li>
+          <li class="ingredients-item">1 colher de manteiga</li>
+          <li class="ingredients-item">1/2 copo de ketchup</li>
+          <li class="ingredients-item">1/3 copo de mostarda</li>
+          <li class="ingredients-item">1 copo de cogumelos</li>
+          <li class="ingredients-item">1 copo de creme de leite</li>
+          <li class="ingredients-item">batata palha a gosto</li>
+        </ul>
+      </div>
+
+      <div class="preparation-steps-container">
+        <h2 class="preparation-title">Modo de preparo</h2>
+        <ol class="preparation-steps">
+          <li class="preparation-steps-item">
+            Em uma panela, misture o frango, o alho, a maionese, o sal e a
+            pimenta.
+          </li>
+          <li class="preparation-steps-item">
+            Em uma frigideira grande, derreta a manteiga e doure a cebola.
+          </li>
+          <li class="preparation-steps-item">
+            Junte o frango temperado até que esteja dourado.
+          </li>
+          <li class="preparation-steps-item">
+            Adicione os cogumelos, o ketchup e a mostarda.
+          </li>
+          <li class="preparation-steps-item">
+            Incopore o creme de leite e retira do fogo antes de ferver.
+          </li>
+          <li class="preparation-steps-item">
+            Sirva com arroz branco e batata palha.
+          </li>
+        </ol>
+      </div>
+
+      <div class="recipe-video-container">
+        <h2 class="recipe-video-title">Vídeo da Receita</h2>
+        <iframe
+          class="recipe-video-iframe"
+          src="https://www.youtube.com/embed/DxrbRHGrfmA?si=mmCivi6V5N2gT7Ly"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <div class="go-back-to-top">
+        <a href="#recipe-title">VOLTA AO TOPO</a>
+      </div>
+    </main>
+  </body>
+</html>
