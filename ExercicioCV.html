@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!--reset all css-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+      integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- font awesome-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      .body {
+        box-sizing: border-box;
+      }
+      .avatar-profile-banner {
+        font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+        font-size: 58px;
+        color: white;
+        background-color: #3a3a3a;
+        max-height: 58px;
+        max-width: 58px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .profile-img {
+        object-fit: fill;
+        border-radius: 50%;
+        max-width: 100%;
+        max-height: 100%;
+        overflow: hidden;
+      }
+
+      .avatar-bagde {
+        position: absolute;
+        background-color: lightskyblue;
+        border-radius: 50%;
+        width: 58px;
+        height: 58px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .header-banner {
+        /* Layout Properties */
+        top: 0px;
+        left: 1px;
+        width: 1919px;
+        height: 67px;
+        /* UI Properties */
+        background: #3a3a3a 0% 0% no-repeat padding-box;
+        opacity: 1;
+        display: flex;
+      }
+
+      .avatar-header-container {
+        width: 62px;
+        height: 62px;
+        border-radius: 50%;
+        box-shadow: 0px 3px 6px #00000029;
+        opacity: 1;
+        padding-left: 553px;
+        padding-top: 5px;
+      }
+      .local-links {
+        width: 1100px;
+        height: 17px;
+        margin-top: 26px;
+        margin-bottom: 24px;
+        margin-left: 294px;
+      }
+
+      .nav-link {
+        font: normal normal bold 13px/17px Segoe UI;
+        text-decoration: underline;
+        color: white;
+        padding: 0 17px;
+      }
+
+      .topcard-img {
+        top: 0.5px;
+        left: 1px;
+       
+        /* UI Properties */
+        border: 1px solid #707070;
+        opacity: 1;
+      }
+
+      .top-card-img {
+        object-fit: cover;
+        width: 100%;
+        min-height: 310px;
+        max-height: 310px;
+      }
+
+      .avatar-profile-container {
+        /* Layout Properties */
+        width: 260px;
+        height: 260px;
+        /* UI Properties */
+        border-radius: 50%;
+        box-shadow: 0px 3px 6px #00000029;
+        opacity: 1;
+        z-index: 1;
+      }
+
+      .profile-info {
+        margin-top: -133px;
+        margin-left: 554px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .social-bagdes {
+        top: 477px;
+        left: 577px;
+        width: 216px;
+        min-height: 58px;
+        /* UI Properties */
+        opacity: 1;
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid black;
+        position: absolute;
+        z-index: 2;
+      }
+      .social-badge{
+        display: flex;
+        min-width: 56px;
+        min-height: 56px;
+        /* UI Properties */
+        border-radius: 50%;
+        background-color: #3A3A3A;
+        border: 1px solid #414141;
+        box-shadow: 0px 3px 6px #00000029;
+        opacity: 1;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .social-linkedin{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .social-github{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .social-badge-text{
+        
+      }
+
+      /**<i class="fa-brands fa-linkedin-in"></i>**/
+
+    </style>
+  </head>
+  <body>
+    <!--
+    <div class="avatar-profile-container">
+        <img class="profile-img" src="profilepic.jpg" alt="Profile Photo">
+
+    </div>
+    <div class="badges-container">
+    <span class="avatar-bagde">
+        i
+    </span>
+</div>
+-->
+
+    <main>
+      <div class="topcard">
+        <header class="header-banner">
+          <div class="avatar-header-container">
+            <div class="avatar-profile-banner">
+              <img
+                class="profile-img"
+                src="profilepic.jpg"
+                alt="Profile Photo"
+              />
+            </div>
+          </div>
+
+          <nav class="local-links">
+            <a href="#presentation" class="nav-link"> APRESENTAÇÃO </a>
+            <a href="#presentation" class="nav-link"> FORMACAO </a>
+            <a href="#experience" class="nav-link"> EXPERIÊNCIA </a>
+            <a href="#projects" class="nav-link"> PROJETOS </a>
+            <a href="#contact" class="nav-link"> FALE CONMIGO! </a>
+          </nav>
+        </header>
+        <img src="top-card.jpg" alt="" class="top-card-img" />
+      </div>
+      <div class="presentation" id="presentation">
+        <div class="profile-info">
+          <div class="avatar-profile-container">
+            <img class="profile-img" src="profilepic.jpg" alt="Profile Photo" />
+          </div>
+          <div class="social-bagdes">
+            <a href="">
+          <div class="social-linkedin">
+            <div class="social-badge">
+               
+                <i class="fa-brands fa-linkedin fa-xl" style="color: #ffffff;"></i>
+            
+            </div>
+            <span class="social-badge-text">LINKEDIN</span>
+        </div>
+    </a>
+
+    <a href="">
+        <div class="social-github">
+            <div class="social-badge">
+               
+                <i class="social-badge-icon fa-brands fa-xl fa-github" style="color: #ffffff;"></i>
+          
+            </div>
+            <span class="social-badge-text">GITHUB</span>
+        </div>
+        </a>
+          </div>
+        </div>
+        <div class="presentation-info">
+          <h2 class="name">Alejandro Amoroso</h2>
+          <h3 class="role-name">Full-Stack Devolper</h3>
+          <h4 class="hi-message">Olá</h4>
+
+          <p class="about-me">oujhdoalshdlashads</p>
+        </div>
+      </div>
+    </main>
+
+    <section>
+      <div class="formation" id="formation">
+        <h2 class="formation-title">Formação</h2>
+        <ul class="formation-list">
+          <li class="formation-item">asddas</li>
+          <li class="formation-item">asdas</li>
+          <li class="formation-item">asdasd</li>
+          <li class="formation-item">asdas</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="experience" id="experience">
+        <h2 class="experience-title">Experiência</h2>
+        <ul class="experience-list">
+          <li class="experience-item">asddas</li>
+          <li class="experience-item">asdas</li>
+          <li class="experience-item">asdasd</li>
+          <li class="experience-item">asdas</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="projects" id="projects">
+        <h2 class="projects-title">Projetos</h2>
+        <ul class="projects-list">
+          <li class="projects-item">asddas</li>
+          <li class="projects-item">asdas</li>
+          <li class="projects-item">asdasd</li>
+          <li class="projects-item">asdas</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <div class="contact">
+        <div class="contact-info">
+          <p class="contact-text"></p>
+          <p class="contact-text"></p>
+          <p class="contact-text"></p>
+          <div class="social-bagdes-footer">
+            <div class="social-badge-footer">
+              <span class="social-badge-text"> B </span>
+            </div>
+
+            <div class="social-badge-footer">
+              <span class="social-badge-text"> B </span>
+            </div>
+            <div class="social-badge-footer">
+              <span class="social-badge-text"> B </span>
+            </div>
+          </div>
+        </div>
+        <form action="" class="contact-form"></form>
+      </div>
+    </footer>
+  </body>
+</html>
