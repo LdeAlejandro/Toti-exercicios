@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caminar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Incluir Font Awesome desde el CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+     body {
+        background-image: url('https://images.pexels.com/photos/572937/pexels-photo-572937.jpeg');
+        background-size: cover; /* Cover the entire container */
+        background-repeat: no-repeat; /* Prevent image from repeating */
+        font-family: poppins;
+        box-sizing: border-box;
+        
+    
+        }
+
+        header{
+            margin: 60px auto;
+            
+        }
+    
+        main {
+            max-width: 1387px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+        }
+
+        .main-title{
+                font-size: 4rem;
+				font-weight: 700;
+				color: #FFF;
+				line-height: 1rem;
+                
+        }
+
+        .second-title{
+                font-weight: 300;
+				font-size: 1rem;
+				display: block;
+				color: rgba(255, 255, 255, 0.90);
+                text-align: center;
+        }
+
+        .section-title{
+            background-color: white;
+            margin-top: -7px;
+            padding: 58.6667px 29.3333px;
+            
+        }
+
+        .main-image{
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+           
+        }
+
+
+       .main-section-title{
+        position: relative;
+        font-size: 1.604125rem;
+        font-weight: bold;
+        margin-bottom: 16px;
+        padding-bottom: 16px;
+        
+       }
+
+       .main-section-title:after{
+                    content: '';
+					position: absolute;
+					margin: auto;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					width:40%;
+					height: 1px;
+					background-color: rgba(0, 0, 0, 0.125);
+       }
+
+       .title-section{
+        padding-bottom:11px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+       }
+
+       .second-section-title{
+        margin: 0;
+        font-size: 11.7333px;
+        color: rgb(187, 187, 187);
+       }
+
+    .section-text-container{
+        padding: 88px;
+        background-color: #F8F7F5;
+    }
+
+    .section-text{
+        color:rgba(0, 0, 0, 0.5)
+    }
+
+    .second-content{
+        background-color: rgb(30, 31, 35);
+        padding: 88px;
+    }
+
+    .title-container{
+        padding: 29.3333px;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgb(18, 19, 21);
+    }
+ 
+        .second-section-content-main-title{
+            position: relative;
+        font-size: 1.604125rem;
+        font-weight: bold;
+        margin-bottom: 16px;
+        padding-bottom: 16px;
+            color: rgba(255, 255, 255);
+        }
+
+        .second-section-content-main-title:after{
+                    content: '';
+					position: absolute;
+					margin: auto;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					width:40%;
+					height: 1px;
+					background-color: #303132
+       }
+
+    .second-section-content-title{
+        color: rgba(255, 255, 255, 0.25);
+    }
+       
+    .section-content-container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .last-container-item{
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        background-color: #F4F4F4;
+        
+    }
+
+    .last-container-item-alt{
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        text-align: right;
+        background-color: rgb(30, 31, 35);
+        
+    }
+
+    .section-content-text-container{
+
+    padding: 88px;
+    
+    }
+    .content-title{
+        margin-bottom: 14.6667px;
+        font-size: 19.8px;
+        font-weight: bold;
+        
+    }
+
+    .content-title-alt{
+        margin-bottom: 14.6667px;
+        font-size: 19.8px;
+        font-weight: bold;
+        color: white;
+        
+    }
+
+    .content-text{
+        color: #7A7A7A;
+    }
+
+    footer {
+    padding-bottom: 30px;
+    padding-top: 60px;
+    display: flex;
+    align-items: center; /* Centra los íconos horizontalmente */
+    justify-content: center; /* Centra los íconos verticalmente */
+
+}
+
+footer i{
+    margin: 0 10px;
+}
+
+
+    </style>
+</head>
+
+<body>
+    <main>
+        <header>
+            <span class="main-title">
+                Caminar
+            </span>
+            <span class="second-title">
+                by Alejandro
+            </span>
+        </header>
+        
+        <section>
+            <div class="main-container">
+                <img class="main-image" src="https://templated.co/items/demos/caminar/images/pic02.jpg" alt="walking" />
+                <div class="section-title">
+                    
+                    <div class="title-section">
+                    <span class="main-section-title">
+                        Fringilla Fermentum Tellus
+                    </span>
+                    <span class="second-section-title">
+                        VEHICULA URNA SED JUSTO BIBENDUM
+                    </span>
+                </div>
+                </div>
+                <div class="section-text-container">
+                    <p class="section-text">
+                        Curabitur eget semper ante. Morbi eleifend ultricies est, a blandit diam vehicula vel.
+                        Vestibulum porttitor nisi quis viverra hendrerit. Suspendisse vel volutpat nibh, vel elementum
+                        lacus. Maecenas commodo pulvinar dui, at cursus metus imperdiet vel. Vestibulum et efficitur
+                        urna. Duis velit nulla, interdum sed felis sit amet, facilisis auctor nunc. Cras luctus urna at
+                        risus feugiat scelerisque nec sed diam.
+                    </p>
+
+                    <p class="section-text">
+                        Nunc fringilla metus odio, at rutrum augue tristique vel. Nulla ac tellus a neque ullamcorper
+                        porta a vitae ipsum. Morbi est sapien, hendrerit quis mi in, aliquam bibendum orci. Vestibulum
+                        imperdiet nibh vitae maximus posuere. Aenean sit amet nibh feugiat, condimentum tellus eu,
+                        malesuada nunc. Mauris ac pulvinar turpis, sit amet pharetra est. Ut bibendum justo condimentum,
+                        vehicula ex vel, venenatis libero. Etiam vehicula urna sed justo bibendum, ac lacinia nunc
+                        pulvinar. Integer nec velit orci. Vestibulum pellentesque varius dapibus. Morbi ullamcorper
+                        augue est, sed luctus orci fermentum dictum. Nunc tincidunt, nisl consequat convallis viverra,
+                        metus nisl ultricies dui, vitae dapibus ligula urna sit amet nibh. Duis ut venenatis enim.
+                    </p>
+            </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="second-content">
+                    <div class="title-container">
+                        <span class="second-section-content-main-title">
+                            Vestibulum Convallis
+                        </span>
+                        <span class="second-section-content-title">
+                            VEHICULA URNA SED JUSTO BIBENDUM
+                        </span>
+                    </div>
+                    
+                    <div class="section-content-container">
+                        <img src="https://templated.co/items/demos/caminar/images/pic03.jpg" alt=""
+                            class="second-section-header-imgs" />
+                        <img src="https://templated.co/items/demos/caminar/images/pic01.jpg" alt=""
+                            class="second-section-header-imgs" />
+                        <img src="https://templated.co/items/demos/caminar/images/pic04.jpg" alt=""
+                            class="second-section-header-imgs" />
+                        <img src="https://templated.co/items/demos/caminar/images/pic05.jpg" alt=""
+                            class="second-section-header-imgs" />
+                    </div>
+        </section>
+
+        <section>
+                <div class="last-container">
+                    <div class="last-container-item">
+                        <div class="section-content-text-container">
+                            <span class="content-title">
+                                Viverra Hendrerit
+                            </span>
+                            <p class="content-text">
+                                Curabitur eget semper ante. Morbi eleifend ultricies est, a blandit diam vehicula vel.
+                                Vestibulum porttitor nisi quis viverra hendrerit. Suspendisse vel volutpat nibh, vel
+                                elementum lacus. Maecenas commodo pulvinar dui, at cursus metus imperdiet vel.
+                            </p>
+                        </div>
+                        <img src="https://templated.co/items/demos/caminar/images/pic06.jpg" alt=""
+                            class="last-content-img" />
+                    </div>
+                    <div class="last-container-item-alt">
+                        <img src="https://templated.co/items/demos/caminar/images/pic07.jpg" alt=""
+                            class="last-content-img" />
+                        <div class="section-content-text-container">
+                            <span class="content-title-alt">
+                                Curabitur Eget
+                            </span>
+                            <p class="content-text">
+                                Curabitur eget semper ante. Morbi eleifend ultricies est, a blandit diam vehicula vel.
+                                Vestibulum porttitor nisi quis viverra hendrerit. Suspendisse vel volutpat nibh, vel
+                                elementum lacus. Maecenas commodo pulvinar dui, at cursus metus imperdiet vel.</p>
+                        </div>
+                        
+                    </div>
+                    <div class="last-container-item">
+                        <div class="section-content-text-container">
+                            <span class="content-title">
+                                Morbi Eleifend
+                            </span>
+                            <p class="content-text">
+                                Curabitur eget semper ante. Morbi eleifend ultricies est, a blandit diam vehicula vel.
+                                Vestibulum porttitor nisi quis viverra hendrerit. Suspendisse vel volutpat nibh, vel
+                                elementum lacus. Maecenas commodo pulvinar dui, at cursus metus imperdiet vel.</p>
+                        </div>
+                        <img src="https://templated.co/items/demos/caminar/images/pic08.jpg" alt=""
+                            class="last-content-img" />
+                    </div>
+                </div>
+            
+        </section>
+
+    <footer>
+        <i class="fa-brands fa-twitter fa-2x" style="color: #d2d1d1;"></i>
+        <i class="fa-brands fa-facebook-f fa-2x "style="color: #d2d1d1;"></i>
+        <i class="fa-brands fa-instagram fa-2x" style="color: #d2d1d1;"></i>
+        <i class="fa-regular fa-envelope fa-2x" style="color: #d2d1d1;"></i>
+    </footer>
+</body>
+
+</html>
