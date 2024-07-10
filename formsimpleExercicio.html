@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var userInfo = {
+    data: []
+}
+
+function checkOldestAge(){
+   let oldestPerson = {name: null,age:null};
+                      
+    
+for(let i =0; i < userInfo.data.length; i++){
+    
+    if(userInfo.data[i].age > oldestPerson.age){
+        oldestPerson = userInfo.data[i];
+    
+       
+        
+    }
+}
+    return oldestPerson
+ 
+}
+
+function checkAge(){
+
+    let listSelector = document.querySelector('ul');
+    let name = document.querySelector("#input-box-name").value;
+    let age = document.querySelector("#input-box-age").value; 
+    let oldestPersonElement = document.querySelector('#oldesperson')
+    
+    if(name !== null && age >0 && age <110){
+        let newElementList = document.createElement('li');
+        newElementList.textContent = `${name}, idade: ${age}`;
+        listSelector.appendChild(newElementList);
+        console.log(userInfo.data)
+        userInfo.data.push({'name': name, 'age': age});
+        
+    }else{
+        alert ('Idade dever ser major que 0 y menor que 110')
+    }
+
+    if(userInfo.data.length >= 2){
+     let oldestUser = checkOldestAge();
+        oldestPersonElement.textContent = `A pessoa mais velha é: ${oldestUser.name} ${oldestUser.age} anos.`
+    }
+    
+}
+
+document.querySelector('#contact-form').addEventListener('submit', function(event){
+   event.preventDefault();
+    checkAge();
+   
+})
+ 
+      });
+    </script>
+  </head>
+  <body>
+    <form action="" id="contact-form">
+      <label for="input-box-name" class="form-input-label-text">Nome</label
+      ><br />
+      <input
+        id="input-box-name"
+        type="text"
+        class="input-box"
+        name="name"
+        maxlength="60"
+        required
+      />
+      <br /><br />
+      <label for="" class="form-input-label-text">Idade</label>
+      <br />
+      <input
+        id="input-box-age"
+        type="number"
+        class="input-box"
+        name="age"
+        min="1"
+        max="110"
+        required
+      />
+      <br /><br />
+
+      <button id="submit-button" type="submit"><p>ENVIAR</p></button>
+    </form>
+
+    <div>
+      <br /><br />
+      Registros de:
+      <ul id="registros"></ul>
+    </div>
+    <div id="oldesperson"></div>
+  </body>
+</html>
