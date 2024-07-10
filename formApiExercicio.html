@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+ document.addEventListener("DOMContentLoaded", function () {
+
+
+    let cepData;
+    function fetchCep(){
+
+let formData = new FormData(
+  document.querySelector("#contact-form")
+);
+let cep = formData.get("cep");
+
+
+
+fetch(`https://viacep.com.br/ws/${cep}/json/`)
+  .then((resp) => {
+    if (resp.ok) {
+      return resp.json();
+    } else {
+      throw new Error("Código de erro: " + resp.status);
+    }
+  })
+  .then((data) => {
+     
+    cepData = data;
+      searchCep();
+  })
+  .catch((erro) => {
+    console.log("Erro na requisição:", erro);
+    alert("parece que o cep é incorreto");
+  });
+
+
+}
+
+function searchCep(){
+          
+    let addressData = cepData;
+            if(!document.querySelector('#address-information')){
+
+            let cepInformation = document.querySelector('#cep-information');
+            
+            let addressDataElement = document.createElement('span');
+            addressDataElement.id = ('address-information');
+            addressDataElement.textContent = `Cep: ${addressData.cep}, Logradouro: ${addressData.logradouro}, Bairro: ${addressData.bairro}, Estado: ${addressData.uf}`;
+            cepInformation.appendChild(addressDataElement)
+        }
+        else{
+            document.querySelector('#address-information').textContent = `Cep: ${addressData.cep}, Logradouro: ${addressData.logradouro}, Bairro: ${addressData.bairro}, Estado: ${addressData.uf}`;
+        }
+}
+    
+        document.querySelector("#contact-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+            console.log('submit')
+            fetchCep();
+      
+
+          });
+      });
+    </script>
+  </head>
+  <body>
+    <br /><br />
+    <form action="" id="contact-form">
+      <label for="input-box-cep" class="form-input-label-text"
+        >Validar endereço colocar cep:</label
+      >
+      <input
+        id="input-box-cep"
+        type="number"
+        class="input-box"
+        name="cep"
+        maxlength="60"
+        required
+      />
+
+      <br /><br />
+      <button id="submit-button" type="submit"><p>ENVIAR</p></button>
+    </form>
+
+    <div id="cep-information">
+        <br /><br />
+
+    </div>
+  </body>
+</html>

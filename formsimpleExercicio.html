@@ -8,57 +8,48 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         var userInfo = {
-    data: []
-}
+          data: [],
+        };
 
-function checkOldestAge(){
-   let oldestPerson = {name: null,age:null};
-                      
-    
-for(let i =0; i < userInfo.data.length; i++){
-    
-    if(userInfo.data[i].age > oldestPerson.age){
-        oldestPerson = userInfo.data[i];
-    
-       
-        
-    }
-}
-    return oldestPerson
- 
-}
+        function checkOldestAge() {
+          let oldestPerson = { name: null, age: null };
 
-function checkAge(){
+          for (let i = 0; i < userInfo.data.length; i++) {
+            if (userInfo.data[i].age > oldestPerson.age) {
+              oldestPerson = userInfo.data[i];
+            }
+          }
+          return oldestPerson;
+        }
 
-    let listSelector = document.querySelector('ul');
-    let name = document.querySelector("#input-box-name").value;
-    let age = document.querySelector("#input-box-age").value; 
-    let oldestPersonElement = document.querySelector('#oldesperson')
-    
-    if(name !== null && age >0 && age <110){
-        let newElementList = document.createElement('li');
-        newElementList.textContent = `${name}, idade: ${age}`;
-        listSelector.appendChild(newElementList);
-        console.log(userInfo.data)
-        userInfo.data.push({'name': name, 'age': age});
-        
-    }else{
-        alert ('Idade dever ser major que 0 y menor que 110')
-    }
+        function checkAge() {
+          let listSelector = document.querySelector("ul");
+          let name = document.querySelector("#input-box-name").value;
+          let age = document.querySelector("#input-box-age").value;
+          let oldestPersonElement = document.querySelector("#oldesperson");
 
-    if(userInfo.data.length >= 2){
-     let oldestUser = checkOldestAge();
-        oldestPersonElement.textContent = `A pessoa mais velha é: ${oldestUser.name} ${oldestUser.age} anos.`
-    }
-    
-}
+          if (name !== null && age > 0 && age < 110) {
+            let newElementList = document.createElement("li");
+            newElementList.textContent = `${name}, idade: ${age}`;
+            listSelector.appendChild(newElementList);
+            console.log(userInfo.data);
+            userInfo.data.push({ name: name, age: age });
+          } else {
+            alert("Idade dever ser major que 0 y menor que 110");
+          }
 
-document.querySelector('#contact-form').addEventListener('submit', function(event){
-   event.preventDefault();
-    checkAge();
-   
-})
- 
+          if (userInfo.data.length >= 2) {
+            let oldestUser = checkOldestAge();
+            oldestPersonElement.textContent = `A pessoa mais velha é: ${oldestUser.name} ${oldestUser.age} anos.`;
+          }
+        }
+
+        document
+          .querySelector("#contact-form")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+            checkAge();
+          });
       });
     </script>
   </head>
