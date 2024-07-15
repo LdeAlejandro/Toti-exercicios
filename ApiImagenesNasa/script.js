@@ -56,7 +56,7 @@ class ApiConnection {
     }
 
     get API_KEY() {
-        return "NluNws4dbwVsEUZ8fPIQlELKCu0h0FArlnWuFn69";
+        return "";
     }
 
     async getRandomImages(count) {
