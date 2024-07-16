@@ -206,7 +206,7 @@ function truncateText(text, max = 150){
  //pegar dados do formulario quando enviado
  search_form_el.addEventListener("submit", function submitSearchAndLoadResults(event){
    event.preventDefault();
-   console.log("submit");
+  
    //dados do formulario
    const form_data = new FormData(event.target);
    const search_type = form_data.get("search-type");
@@ -215,7 +215,7 @@ function truncateText(text, max = 150){
    const end_date = form_data.get("end-date");
 
    if (search_type === "random" && random_count) {
-     console.log("random");
+    
      displayCardPlaceHolders(
        search_results_el,
        random_count <= 15 ? random_count : 15
@@ -229,7 +229,7 @@ function truncateText(text, max = 150){
    }
 
    if (search_type === "data-range" && start_date) {
-     console.log("data-range");
+   
      displayCardPlaceHolders(
        search_results_el,
        random_count <= 15 ? random_count : 15
@@ -250,10 +250,9 @@ Array.from(search_type_options_els).forEach((opt_el) => {
     
     function changeEnabledSearchType(event){
             document.querySelectorAll('[data-search-type-fieldset]').forEach(fs => {
-                console.log(event.target.value)
-                console.log(fs.dataset.searchTypeFieldset)
+               
                 fs.disabled = event.target.value !== fs.dataset.searchTypeFieldset
-                console.log(fs)
+              
             })
         })
     
