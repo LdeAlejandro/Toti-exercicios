@@ -1,4 +1,4 @@
-function displayResultsAsCards(title, description, imague_url, image_description) {
+function createCards(title, description, imague_url, image_description) {
   //creating card elements
   let cardElement = document.createElement("article");
   cardElement.classList.add("card", "mb-2", "mx-2");
@@ -43,8 +43,9 @@ function createImage(url, description) {
   return el;
 }
 
+
 function createSampleCard() {
-  return displayResultsAsCards("Carregando...", "...");
+  return createCards("Carregando...", "...");
 }
 
 // function constructor with class:
@@ -56,7 +57,7 @@ class ApiConnection {
     }
 
     get API_KEY() {
-        return "NluNws4dbwVsEUZ8fPIQlELKCu0h0FArlnWuFn69";
+        return "DEMO_KEY";
     }
 
     async getRandomImages(count) {
@@ -167,19 +168,31 @@ document.addEventListener("DOMContentLoaded", function startApp(){
 
     console.log("started app!!!");
 //create card sample elements
-    for (let i = 0; i < 8; i++){
-        search_results_el.appendChild(createSampleCard());
+function displayCardPlaceHolders(el, count){
+    el.innerHTML ="";
+    for (let i = 0; i < count; i++){
+        el.appendChild(createSampleCard());
     }
+}
 
+displayCardPlaceHolders(search_results_el, 15);
+
+function displayResultsAsCards(el, results){
+    el.innerHTML ="";
+    results.forEach(result => {
+        if(!result.url.includes("youtube")){
+        el.appendChild(createCards(result.title, truncateText(result.explanation), result.url, result.title));  
+    }
+      })
+}
     //delete sample and create card elements with the api content
     api_connection.getRandomImages(8)
     .then(results =>{
-        search_results_el.innerHTML ="";
-        results.forEach(result => {
-          search_results_el.appendChild(displayResultsAsCards(result.title, truncateText(result.explanation), result.url, result.title));  
-        })
+        displayResultsAsCards(search_results_el, results);
     })
  
+    
+
 //validar tamano do texto
 function truncateText(text, max = 150){
     if(text.length < max){
@@ -192,27 +205,42 @@ function truncateText(text, max = 150){
 
  //pegar dados do formulario quando enviado
  search_form_el.addEventListener("submit", function submitSearchAndLoadResults(event){
-    event.preventDefault();
-    console.log("submit")
-    //dados do formulario
-    const form_data = new FormData(event.target);
-    const search_type = form_data.get("search-type");
-    const random_count = +form_data.get("random-qty");
-    const start_date = form_data.get("start-date");
-    const end_date = form_data.get("end-date");
+   event.preventDefault();
+   console.log("submit");
+   //dados do formulario
+   const form_data = new FormData(event.target);
+   const search_type = form_data.get("search-type");
+   const random_count = +form_data.get("random-qty");
+   const start_date = form_data.get("start-date");
+   const end_date = form_data.get("end-date");
 
+   if (search_type === "random" && random_count) {
+     console.log("random");
+     displayCardPlaceHolders(
+       search_results_el,
+       random_count <= 15 ? random_count : 15
+     );
 
-    if(search_type ==="random" && random_count){
-        console.log("random")
-        displayCardPlaceHolders(search_results_el, random_count <= 15 ? random_count : 15);
-        
-        api_connection
-        .getRandomImages(random_count)
-        .then((results) => displayResultsAsCards(search_results_el, results))
-        .catch((err) => console.error(err))
-        }
+     api_connection
+       .getRandomImages(random_count)
+       .then((results) => {search_results_el.innerHTML ="";
+       displayResultsAsCards(search_results_el, results)})
+       .catch((err) => console.error(err));
+   }
 
-    }
+   if (search_type === "data-range" && start_date) {
+     console.log("data-range");
+     displayCardPlaceHolders(
+       search_results_el,
+       random_count <= 15 ? random_count : 15
+     );
+
+     api_connection
+       .getImagesForDateRange(start_date, end_date)
+       .then((results) => displayResultsAsCards(search_results_el, results))
+       .catch((err) => console.error(err));
+   }
+ }
 )
 
 
