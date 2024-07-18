@@ -48,6 +48,7 @@ function createSampleCard() {
   return createCards("Carregando...", "...");
 }
 
+
 // function constructor with class:
 class ApiConnection {
  
@@ -193,6 +194,7 @@ function displayResultsAsCards(el, results){
  
     
 
+    
 //validar tamano do texto
 function truncateText(text, max = 150){
     if(text.length < max){
@@ -283,3 +285,6 @@ start_date_el.addEventListener("change", function changeStartDateMinLimit(event)
 
    
 })
+
+
+
